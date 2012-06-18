@@ -1,0 +1,429 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{53F2576B-C602-412C-BF2F-DE7728019ED8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PetShop.Web</RootNamespace>
+    <AssemblyName>PetShop.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="PetShop" Order="1">
+          <Destination Path="Data Source=t8fjh8c8c5.database.windows.net%3bInitial Catalog=petshop2%3bUser ID=demo%3bPassword=Passw0rd!" />
+          <Object Type="DbFullSql">
+            <Source Path="..\PetShop.sql" Transacted="False" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Category.aspx.cs">
+      <DependentUpon>Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Checkout.aspx.cs">
+      <DependentUpon>Checkout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AddressUI.ascx.cs">
+      <DependentUpon>AddressUI.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Banner.ascx.cs">
+      <DependentUpon>Banner.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Cart.ascx.cs">
+      <DependentUpon>Cart.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ConfirmAddresses.ascx.cs">
+      <DependentUpon>ConfirmAddresses.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\NavBar.ascx.cs">
+      <DependentUpon>NavBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\NavBarNoMenu.ascx.cs">
+      <DependentUpon>NavBarNoMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Preferences.ascx.cs">
+      <DependentUpon>Preferences.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SignOutNavBar.ascx.cs">
+      <DependentUpon>SignOutNavBar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SimplePager.cs" />
+    <Compile Include="Controls\StaticAddress.ascx.cs">
+      <DependentUpon>StaticAddress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\ViewStatePager.cs" />
+    <Compile Include="CreateAccount.aspx.cs">
+      <DependentUpon>CreateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditAccount.aspx.cs">
+      <DependentUpon>EditAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ItemDetails.aspx.cs">
+      <DependentUpon>ItemDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Items.aspx.cs">
+      <DependentUpon>Items.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyAccount.aspx.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderBilling.aspx.cs">
+      <DependentUpon>OrderBilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderProcess.aspx.cs">
+      <DependentUpon>OrderProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderShipping.aspx.cs">
+      <DependentUpon>OrderShipping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProcessFlow\AccountController.cs" />
+    <Compile Include="ProcessFlow\CartController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignIn.aspx.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignOut.aspx.cs">
+      <DependentUpon>SignOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebComponents\CleanString.cs" />
+    <Compile Include="WebServices.asmx.cs">
+      <DependentUpon>WebServices.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{ae805124-3d88-4ae5-a1e7-5a5a595a298e}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DALFactory\DALFactory.csproj">
+      <Project>{fbae3210-40a6-44d3-acef-5881d8f4a6cd}</Project>
+      <Name>DALFactory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{1ff5b08d-74a0-452d-a8a2-2534d985f8be}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SQLServer\SQLServerDAL.csproj">
+      <Project>{9aa6b962-0628-4c0d-a4ea-54a244c32136}</Project>
+      <Name>SQLServerDAL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Category.aspx.resx">
+      <DependentUpon>Category.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkout.aspx.resx">
+      <DependentUpon>Checkout.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AddressUI.ascx.resx">
+      <DependentUpon>AddressUI.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Banner.ascx.resx">
+      <DependentUpon>Banner.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Cart.ascx.resx">
+      <DependentUpon>Cart.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ConfirmAddresses.ascx.resx">
+      <DependentUpon>ConfirmAddresses.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NavBar.ascx.resx">
+      <DependentUpon>NavBar.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NavBarNoMenu.ascx.resx">
+      <DependentUpon>NavBarNoMenu.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Preferences.ascx.resx">
+      <DependentUpon>Preferences.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SignOutNavBar.ascx.resx">
+      <DependentUpon>SignOutNavBar.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StaticAddress.ascx.resx">
+      <DependentUpon>StaticAddress.ascx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateAccount.aspx.resx">
+      <DependentUpon>CreateAccount.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Default.aspx.resx">
+      <DependentUpon>Default.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditAccount.aspx.resx">
+      <DependentUpon>EditAccount.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global.asax.resx">
+      <DependentUpon>Global.asax.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItemDetails.aspx.resx">
+      <DependentUpon>ItemDetails.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Items.aspx.resx">
+      <DependentUpon>Items.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyAccount.aspx.resx">
+      <DependentUpon>MyAccount.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderBilling.aspx.resx">
+      <DependentUpon>OrderBilling.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderProcess.aspx.resx">
+      <DependentUpon>OrderProcess.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderShipping.aspx.resx">
+      <DependentUpon>OrderShipping.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search.aspx.resx">
+      <DependentUpon>Search.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShoppingCart.aspx.resx">
+      <DependentUpon>ShoppingCart.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignIn.aspx.resx">
+      <DependentUpon>SignIn.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignOut.aspx.resx">
+      <DependentUpon>SignOut.aspx.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Category.aspx" />
+    <Content Include="Checkout.aspx" />
+    <Content Include="Controls\AddressUI.ascx" />
+    <Content Include="Controls\Banner.ascx" />
+    <Content Include="Controls\Cart.ascx" />
+    <Content Include="Controls\ConfirmAddresses.ascx" />
+    <Content Include="Controls\NavBar.ascx" />
+    <Content Include="Controls\NavBarNoMenu.ascx" />
+    <Content Include="Controls\Preferences.ascx" />
+    <Content Include="Controls\SignOutNavBar.ascx" />
+    <Content Include="Controls\StaticAddress.ascx" />
+    <Content Include="CreateAccount.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="EditAccount.aspx" />
+    <Content Include="Error.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Help.aspx" />
+    <Content Include="Images\bannerBirds.gif" />
+    <Content Include="Images\bannerCats.gif" />
+    <Content Include="Images\bannerDogs.gif" />
+    <Content Include="Images\bannerFish.gif" />
+    <Content Include="Images\bannerReptiles.gif" />
+    <Content Include="Images\banner_birds.gif" />
+    <Content Include="Images\banner_cats.gif" />
+    <Content Include="Images\banner_dogs.gif" />
+    <Content Include="Images\banner_fish.gif" />
+    <Content Include="Images\banner_reptiles.gif" />
+    <Content Include="Images\bkg-topbar.gif" />
+    <Content Include="Images\buttonAdd.gif" />
+    <Content Include="Images\buttonCheckout.gif" />
+    <Content Include="Images\buttonContinue.gif" />
+    <Content Include="Images\buttonMore.gif" />
+    <Content Include="Images\buttonPrev.gif" />
+    <Content Include="Images\buttonRegister.gif" />
+    <Content Include="Images\buttonRemove.gif" />
+    <Content Include="Images\buttonSubmit.gif" />
+    <Content Include="Images\buttonUpdate.gif" />
+    <Content Include="Images\button_add_to_cart.gif" />
+    <Content Include="Images\button_continue.gif" />
+    <Content Include="Images\button_next.gif" />
+    <Content Include="Images\button_prev.gif" />
+    <Content Include="Images\button_previous.gif" />
+    <Content Include="Images\button_proceed.gif" />
+    <Content Include="Images\button_register_now.gif" />
+    <Content Include="Images\button_remove.gif" />
+    <Content Include="Images\button_submit.gif" />
+    <Content Include="Images\button_update_cart.gif" />
+    <Content Include="Images\cart.gif" />
+    <Content Include="Images\error.gif" />
+    <Content Include="Images\event_log.gif" />
+    <Content Include="Images\footerStripe.gif" />
+    <Content Include="Images\headerStripe1.gif" />
+    <Content Include="Images\headerStripe2.gif" />
+    <Content Include="Images\headerStripe3.gif" />
+    <Content Include="Images\headerTitle.gif" />
+    <Content Include="Images\iconCart.gif" />
+    <Content Include="Images\lizard1.gif" />
+    <Content Include="Images\lizard2.gif" />
+    <Content Include="Images\lizard3.gif" />
+    <Content Include="Images\lizard4.gif" />
+    <Content Include="Images\lizardA.gif" />
+    <Content Include="Images\lizardB.gif" />
+    <Content Include="Images\lizardC.gif" />
+    <Content Include="Images\liz_1.gif" />
+    <Content Include="Images\liz_2.gif" />
+    <Content Include="Images\liz_3.gif" />
+    <Content Include="Images\liz_4.gif" />
+    <Content Include="Images\liz_5.gif" />
+    <Content Include="Images\liz_6.gif" />
+    <Content Include="Images\main.jpg" />
+    <Content Include="Images\main_feet.gif" />
+    <Content Include="Images\mobile_title.gif" />
+    <Content Include="Images\Pets\bird1.jpg" />
+    <Content Include="Images\Pets\bird2.jpg" />
+    <Content Include="Images\Pets\cat1.jpg" />
+    <Content Include="Images\Pets\cat2.jpg" />
+    <Content Include="Images\Pets\dog1.jpg" />
+    <Content Include="Images\Pets\dog2.jpg" />
+    <Content Include="Images\Pets\dog3.jpg" />
+    <Content Include="Images\Pets\dog4.jpg" />
+    <Content Include="Images\Pets\dog5.jpg" />
+    <Content Include="Images\Pets\dog6.jpg" />
+    <Content Include="Images\Pets\fish1.jpg" />
+    <Content Include="Images\Pets\fish2.jpg" />
+    <Content Include="Images\Pets\fish3.jpg" />
+    <Content Include="Images\Pets\fish4.jpg" />
+    <Content Include="Images\Pets\reptile1.jpg" />
+    <Content Include="Images\Pets\reptile2.jpg" />
+    <Content Include="Images\space.gif" />
+    <Content Include="Images\splash.jpg" />
+    <Content Include="Images\title.gif" />
+    <Content Include="Images\top_stripe1.gif" />
+    <Content Include="Images\top_stripe2.gif" />
+    <Content Include="Images\top_stripe3.gif" />
+    <Content Include="ItemDetails.aspx" />
+    <Content Include="Items.aspx" />
+    <Content Include="MyAccount.aspx" />
+    <Content Include="OrderBilling.aspx" />
+    <Content Include="OrderProcess.aspx" />
+    <Content Include="OrderShipping.aspx" />
+    <Content Include="Search.aspx" />
+    <Content Include="ShoppingCart.aspx" />
+    <Content Include="SignIn.aspx" />
+    <Content Include="SignOut.aspx" />
+    <Content Include="Styles.css" />
+    <Content Include="WebServices.asmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\petshop - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\petshop - Web Deploy.pubxml" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49056</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48894/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
